@@ -9,9 +9,9 @@ const Stock = (props) => {
           <h5 className="card-title">{
             props.stockData.name
           }</h5>
-          <p className="card-text">{
-            props.stockData.price
-          }</p>
+          <p className="card-text">
+            {props.stockData.ticker}:{props.stockData.price}
+          </p>
         </div>
       </div>
 
