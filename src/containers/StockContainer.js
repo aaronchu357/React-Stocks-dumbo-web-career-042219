@@ -4,11 +4,15 @@ import Stock from '../components/Stock'
 class StockContainer extends Component {
 
   render() {
+    const allStocks = this.props.stocks.map(stock => {
+      return <Stock stockData={stock} handleStockOnClick={this.props.handleStockOnClick} key={`stock_${stock.id}`} />
+    })
+
     return (
-      <div>
+      <div id={"stocks-container"} >
         <h2>Stocks</h2>
         {
-          //render the list of stocks here
+          allStocks
         }
       </div>
     );

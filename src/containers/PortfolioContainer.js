@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import Stock from '../components/Stock'
 
 class PortfolioContainer extends Component {
-
+  
   render() {
+    // debugger
+    const allStocksInPortfolio = this.props.stockInPortfolio.map(stock => {
+      return <Stock stockData={stock.stockData} handleStockOnClick={this.props.handleStockOnClick} key={`stock_${stock.stockData.id}`}/>
+    })
     return (
-      <div>
+      <div id={"portfolio-container"}>
         <h2>My Portfolio</h2>
           {
-            //render your portfolio stocks here
+            allStocksInPortfolio
           }
       </div>
     );
